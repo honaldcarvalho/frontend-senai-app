@@ -1,0 +1,79 @@
+<div class="bg-dark w-100 h-100 text-white">
+    <div class="position-absolute top-50 start-50 translate-middle">
+
+        <form *ngIf="isLogin" class="formulario col-lg-12 " id="form-login" [formGroup]="formLogin" (ngSubmit)="logar()">
+            <img class="mb-4" src="/assets/img/gamemania.png" alt="GAMEMANIA" width="100%">
+            <h4 class="mb-3 font-weight-normal">Entre com suas credenciais</h4>
+
+            <label for="usuario" class="sr-only mb-1">Usuario</label>
+            <input id="usuario" formControlName="usuario" class="form-control mb-2" placeholder="Entre com seu login" required="" autofocus="">
+            <div *ngIf="formLogin.get('usuario')?.errors && formLogin.get('usuario')?.touched" class="alert alert-danger" role="alert">
+                <div *ngIf="formLogin.get('usuario')?.errors?.['required']">O usuario não pode ficar em branco.</div>
+                <div *ngIf="formLogin.get('usuario')?.errors?.['minlength']">
+                    O usuario tem que ter ao menos 4 caracteres.
+                </div>
+            </div>
+            <label for="senha" class="sr-only mb-1">Senha</label>
+            <input type="password" formControlName="senha"  id="senha" class="form-control" placeholder="Entre com sua senha" required="">
+            <div *ngIf="formLogin.get('senha')?.errors && formLogin.get('senha')?.touched" class="alert alert-danger" role="alert">
+                <div *ngIf="formLogin.get('senha')?.errors?.['required']">A senha não pode ficar em branco.</div>
+                <div *ngIf="formLogin.get('senha')?.errors?.['minlength']">
+                    A senha tem que ter ao menos 4 caracteres.
+                </div>
+            </div>
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" id="lembrar"> Lembrar-me
+                </label>
+            </div>
+            <button type="submit" class="btn btn-lg btn-primary btn-block" id="btn-login" [disabled]="!formLogin.valid" >Entrar</button>
+
+            <div class="text-center mt-3">
+                <p>Não tem cadastro? <a (click)="registro()" class="btn btn-outline-warning show-fomulario"
+                        id="show-cadastro">Cadastrar-se</a></p>
+            </div>
+        </form>
+
+        <form *ngIf="!isLogin" class="formulario col-lg-12" id="form-cadastro" [formGroup]="formRegistro" (ngSubmit)="registrar()">
+            <img class="mb-4" src="/assets/img/gamemania.png" alt="GAMEMANIA" width="100%">
+            <h4 class="mb-3 font-weight-normal">Cadastro</h4>
+
+            <label for="cadastro-usuario" class="sr-only mb-1">Usuario</label>
+            <input id="cadastro-usuario" formControlName="usuario"  class="form-control mb-2" placeholder="Entre com um usuario" required=""
+                autofocus="">
+            <div *ngIf="formRegistro.get('usuario')?.errors && formRegistro.get('usuario')?.touched" class="alert alert-danger" role="alert">
+                <div *ngIf="formRegistro.get('usuario')?.errors?.['required']">O usuario não pode ficar em branco.</div>
+                <div *ngIf="formRegistro.get('usuario')?.errors?.['minlength']">
+                    O usuario tem que ter ao menos 4 caracteres.
+                </div>
+            </div>
+
+            <label for="email" class="sr-only mb-1">Email</label>
+            <input id="email" formControlName="email"  class="form-control mb-2" placeholder="Entre com um email" required="" autofocus="">
+            <div *ngIf="formRegistro.get('email')?.errors && formRegistro.get('senha')?.touched" class="alert alert-danger" role="alert">
+                <div *ngIf="formRegistro.get('email')?.errors?.['required']">O email não pode ficar em branco.</div>
+                <div *ngIf="formRegistro.get('email')?.errors?.['email']">
+                    Entre com um email válido
+                </div>
+            </div>
+
+            <label for="cadastro-senha" class="sr-only mb-1">Senha</label>
+            <input type="password" formControlName="senha" id="cadastro-senha" class="form-control" placeholder="Entre com uma senha"
+                required="">
+            <div *ngIf="formRegistro.get('senha')?.errors && formRegistro.get('senha')?.touched" class="alert alert-danger" role="alert">
+                <div *ngIf="formRegistro.get('senha')?.errors?.['required']">A senha não pode ficar em branco.</div>
+                <div *ngIf="formRegistro.get('senha')?.errors?.['minlength']">
+                    A senha tem que ter ao menos 4 caracteres.
+                </div>
+            </div>
+
+            <button class="btn btn-primary btn-block mt-3" id="btn-cadastrar" [disabled]="!formRegistro.valid">Cadastrar</button>
+
+            <div class="text-center mt-3">
+                <p>Já tem cadastro? <a (click)="login()" class="btn btn-outline-warning show-fomulario" id="show-login"> Faça o
+                        Login</a></p>
+            </div>
+
+        </form>
+    </div>
+</div>

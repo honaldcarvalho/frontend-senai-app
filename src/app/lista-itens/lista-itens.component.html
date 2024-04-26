@@ -1,0 +1,36 @@
+<h2 class="text-gm"><a href="#!">{{secao}}</a></h2>
+
+<mat-grid-list cols="3">
+
+    @if (secao == 'PC GAMER') {
+
+        @for (produto of produtos; track produto) {
+            @if (produto.tipo == 'pc') {
+                <mat-grid-tile>
+                    <app-item-venda
+                        imagem="{{produto.imagem}}"
+                        descricao="{{produto.descricao}}"
+                        tipo="{{produto.tipo}}"
+                        valor="{{produto.valor}}"
+                    ></app-item-venda>
+                </mat-grid-tile>
+            }
+        }
+
+    } @else if (secao == 'COMPONENTES') {
+
+        @for (produto of produtos; track produto) {
+            @if (produto.tipo == 'componente') {
+                <mat-grid-tile>
+                    <app-item-venda
+                        imagem="{{produto.imagem}}"
+                        descricao="{{produto.descricao}}"
+                        tipo="{{produto.tipo}}"
+                        valor="{{produto.valor}}"
+                    ></app-item-venda>
+                </mat-grid-tile>
+            }
+        }
+    }
+
+</mat-grid-list>

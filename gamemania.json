@@ -1,0 +1,46 @@
+{
+  "produtos": [
+    {
+      "id": "1",
+      "tipo": "pc",
+      "descricao": "PC CORE I5 DE 5° GERAÇÃO",
+      "imagem": "/assets/img/produtos/image3.png",
+      "valor": 3600
+    },
+    {
+      "id": "2",
+      "descricao": "PC RYZEN 7 3700xd",
+      "valor": 5800,
+      "imagem": "/assets/img/produtos/image4.png",
+      "tipo": "pc"
+    },
+    {
+      "id": "3",
+      "descricao": "NOTEBOOK ASUS PREDATOR",
+      "valor": 8500,
+      "imagem": "/assets/img/produtos/image9.png",
+      "tipo": "pc"
+    },
+    {
+      "id": "4",
+      "tipo": "componente",
+      "descricao": "PLCA DE VIDEO AMD 5800",
+      "imagem": "/assets/img/produtos/image6.png",
+      "valor": 2600
+    },
+    {
+      "id": "5",
+      "tipo": "componente",
+      "descricao": "FONTE DE ENERGIA ATX",
+      "imagem": "/assets/img/produtos/image7.png",
+      "valor": 2600
+    },
+    {
+      "id": 0,
+      "tipo": "componente",
+      "descricao": "SSD KINGSTON 1Tb",
+      "imagem": "/assets/img/produtos/image8.png",
+      "valor": 590
+    }
+  ]
+}
